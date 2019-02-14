@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="update-time">{{ '> 更新時間 ' + formatUpdateTime }}</div>
+    <div class="update-time">{{ '> 更新日時 ' + formatUpdateTime }}</div>
     <div class="tooltip">
       <div class="channel-name">{{ channelName }}</div>
       <div class="tooltip__rule"></div>
