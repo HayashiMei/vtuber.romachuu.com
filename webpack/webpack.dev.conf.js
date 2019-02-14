@@ -28,7 +28,7 @@ module.exports = merge(webpackBaseConfig, {
       template: path.join(__dirname, '../app/index.html'),
       favicon: path.resolve('app/images/favicon.png'),
     }),
-    SW,
+    // SW,
   ],
   devtool: 'source-map',
   watch: true,

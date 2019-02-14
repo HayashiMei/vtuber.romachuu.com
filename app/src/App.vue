@@ -1,5 +1,5 @@
 <template>
-  <div class="chart" id="chart">
+  <div class="app">
     <div class="update-time">{{ '> 更新時間 ' + formatUpdateTime }}</div>
     <div class="tooltip">
       <div class="channel-name">{{ channelName }}</div>
@@ -7,14 +7,21 @@
       <div class="subscriber-count">登録数：{{ subscriberCount }}</div>
       <div class="view-count">再生数：{{ viewCount }}</div>
     </div>
+    <transition name="fade">
+      <loading v-if="showLoad" :percentage="percentage"/>
+    </transition>
   </div>
 </template>
 
 <script>
 import * as d3 from 'd3';
-import data from './data.json';
+import Loading from './components/Loading.vue';
+// import data from './data.json';
 
 export default {
+  components: {
+    Loading,
+  },
   data: () => ({
     updateTime: '',
     svg: null,
@@ -24,6 +31,8 @@ export default {
     channelName: '',
     subscriberCount: '',
     viewCount: '',
+    loadCount: 0,
+    showLoad: true,
   }),
   computed: {
     formatUpdateTime() {
@@ -39,12 +48,33 @@ export default {
       const s = this.padStart(this.updateTime.getSeconds());
       return `${year}/${month}/${day} ${h}:${m}:${s}`;
     },
+    percentage() {
+      if (!Array.isArray(this.channelData)) {
+        return 0;
+      }
+      return (this.loadCount / this.channelData.length) * 100;
+    },
+  },
+  watch: {
+    loadCount(to) {
+      if (!Array.isArray(this.channelData)) {
+        return;
+      }
+
+      if (to === this.channelData.length) {
+        this.createChart();
+
+        setTimeout(() => {
+          this.showLoad = false;
+        }, 2000);
+      }
+    },
   },
   mounted() {
     d3.json('data.json').then(data => {
       this.channelData.push(...data.channels);
       this.updateTime = new Date(data.updateTime);
-      this.createChart();
+      this.loadImage();
     });
 
     window.addEventListener('resize', this.renderCircle);
@@ -60,10 +90,10 @@ export default {
       this.tooltip = d3.select('.tooltip');
 
       this.svg = d3
-        .select('#chart')
+        .select('.app')
         .append('svg')
         .attr('width', '100%')
-        .attr('height', '100%');
+        .attr('height', 'calc(100% - 50px)');
 
       this.svg
         .append('defs')
@@ -85,7 +115,7 @@ export default {
     },
     renderCircle() {
       const width = document.body.offsetWidth,
-        height = document.body.offsetHeight;
+        height = document.body.offsetHeight - 50;
 
       const root = d3
         .pack()
@@ -141,12 +171,21 @@ export default {
     handleClick(d) {
       window.open(`https://www.youtube.com/channel/${d.data.id}`);
     },
+    loadImage() {
+      for (const c of this.channelData) {
+        const image = new Image();
+        image.src = c.thumbnail;
+        image.onload = () => {
+          this.loadCount++;
+        };
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.chart {
+.app {
   height: 100%;
   width: 100%;
   background-color: #333;
@@ -154,9 +193,6 @@ export default {
 }
 
 .update-time {
-  position: absolute;
-  left: 0;
-  top: 0;
   padding: 10px;
   color: white;
   font-size: 30px;
@@ -192,5 +228,14 @@ export default {
 
 .subscriber-count {
   margin-bottom: 3px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

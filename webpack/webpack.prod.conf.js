@@ -57,6 +57,6 @@ module.exports = merge(webpackBaseConfig, {
       filename: 'css/[name].[hash:8].css',
       chunkFilename: 'css/[id].[hash:8].css',
     }),
-    SW,
+    // SW,
   ],
 });
