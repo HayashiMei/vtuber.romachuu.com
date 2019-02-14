@@ -8,8 +8,6 @@ const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.conf.js');
 const SW = require('./sw.config.js');
 
-const devMode = process.env.NODE_ENV !== 'production';
-
 module.exports = merge(webpackBaseConfig, {
   mode: 'production',
   entry: {
