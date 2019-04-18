@@ -45,8 +45,7 @@ export default {
       const day = this.padStart(this.updateTime.getDate());
       const h = this.padStart(this.updateTime.getHours());
       const m = this.padStart(this.updateTime.getMinutes());
-      const s = this.padStart(this.updateTime.getSeconds());
-      return `${year}/${month}/${day} ${h}:${m}:${s}`;
+      return `${year}/${month}/${day} ${h}:${m}`;
     },
     percentage() {
       if (!Array.isArray(this.channelData)) {
