@@ -1,6 +1,4 @@
-import '@babel/polyfill';
 import Vue from 'vue';
-// import './utils/service-worker';
 import '../scss/index.scss';
 
 Vue.config.debug = true;
