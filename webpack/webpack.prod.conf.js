@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.conf.js');
-const SW = require('./sw.config.js');
+// const SW = require('./sw.config.js');
 
 module.exports = merge(webpackBaseConfig, {
   mode: 'production',

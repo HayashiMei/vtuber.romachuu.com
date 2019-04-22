@@ -3,9 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.conf.js');
-const SW = require('./sw.config.js');
-
-const devMode = process.env.NODE_ENV !== 'production';
+// const SW = require('./sw.config.js');
 
 module.exports = merge(webpackBaseConfig, {
   mode: 'development',
