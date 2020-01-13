@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "0.19.1",
-    "core-js": "3.6.2",
+    "core-js": "3.6.3",
     "d3": "5.15.0",
     "vue": "2.6.11"
   },
