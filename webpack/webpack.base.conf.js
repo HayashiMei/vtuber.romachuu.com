@@ -34,10 +34,6 @@ module.exports = {
           outputPath: 'images/',
         },
       },
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
-      },
     ],
   },
   plugins: [
