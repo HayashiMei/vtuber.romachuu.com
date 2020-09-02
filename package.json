@@ -15,7 +15,7 @@
   "author": "HayashiMei <hayashi@kato-megumi.com> (https://blog.romachuu.com)",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.20.0",
     "core-js": "3.6.5",
     "d3": "6.1.1",
     "vue": "2.6.12"
