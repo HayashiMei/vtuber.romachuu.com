@@ -2369,13 +2369,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cron-parser@^2.18.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/cron-parser/-/cron-parser-2.18.0.tgz#de1bb0ad528c815548371993f81a54e5a089edcf"
-  integrity sha512-s4odpheTyydAbTBQepsqd2rNWGa2iV3cyo8g7zbI2QQYGLVsfbhmwukayS1XHppe02Oy1fg7mg6xoaraVJeEcg==
+cron-parser@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cron-parser/-/cron-parser-3.1.0.tgz#665ef742315443a6c54ada278cd795f2d75869b5"
+  integrity sha512-4Spe1gRbiQza3BqklhB/8dMi8PZAWalhLK1p+k3iYJjcxIK6t4YYGL0lKdHT0e743jDTJEDBz1NEAzY88kyNWQ==
   dependencies:
     is-nan "^1.3.0"
-    moment-timezone "^0.5.31"
+    luxon "^1.25.0"
 
 cross-env@7.0.3:
   version "7.0.3"
@@ -4814,6 +4814,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+luxon@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.25.0.tgz#d86219e90bc0102c0eb299d65b2f5e95efe1fe72"
+  integrity sha512-hEgLurSH8kQRjY6i4YLey+mcKVAWXbDNlZRmM6AgWDJ1cY3atl8Ztf5wEY7VBReFbmGnwQPz7KYJblL8B2k0jQ==
+
 magic-string@^0.25.0, magic-string@^0.25.7:
   version "0.25.7"
   resolved "https://registry.npm.taobao.org/magic-string/download/magic-string-0.25.7.tgz?cache=0&sync_timestamp=1583500518436&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmagic-string%2Fdownload%2Fmagic-string-0.25.7.tgz#3f497d6fd34c669c6798dcb821f2ef31f5445051"
@@ -5088,18 +5093,6 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.npm.taobao.org/mkdirp/download/mkdirp-1.0.4.tgz?cache=0&sync_timestamp=1587535418745&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmkdirp%2Fdownload%2Fmkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
 
-moment-timezone@^0.5.31:
-  version "0.5.32"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.32.tgz#db7677cc3cc680fd30303ebd90b0da1ca0dfecc2"
-  integrity sha512-Z8QNyuQHQAmWucp8Knmgei8YNo28aLjJq6Ma+jy1ZSpSk5nyfRT8xgUbSQvD2+2UajISfenndwvFuH3NGS+nvA==
-  dependencies:
-    moment ">= 2.9.0"
-
-"moment@>= 2.9.0":
-  version "2.25.3"
-  resolved "https://registry.npm.taobao.org/moment/download/moment-2.25.3.tgz?cache=0&sync_timestamp=1588605303253&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmoment%2Fdownload%2Fmoment-2.25.3.tgz#252ff41319cf41e47761a1a88cab30edfe9808c0"
-  integrity sha1-JS/0ExnPQeR3YaGojKsw7f6YCMA=
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -5272,12 +5265,12 @@ node-sass@5.0.0:
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
 
-node-schedule@1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/node-schedule/-/node-schedule-1.3.3.tgz#f8e01c5fb9597f09ecf9c4c25d6938e5e7a06f48"
-  integrity sha512-uF9Ubn6luOPrcAYKfsXWimcJ1tPFtQ8I85wb4T3NgJQrXazEzojcFZVk46ZlLHby3eEJChgkV/0T689IsXh2Gw==
+node-schedule@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/node-schedule/-/node-schedule-2.0.0.tgz#73ab4957d056c63708409cc1fab676e0e149c191"
+  integrity sha512-cHc9KEcfiuXxYDU+HjsBVo2FkWL1jRAUoczFoMIzRBpOA4p/NRHuuLs85AWOLgKsHtSPjN8csvwIxc2SqMv+CQ==
   dependencies:
-    cron-parser "^2.18.0"
+    cron-parser "^3.1.0"
     long-timeout "0.1.1"
     sorted-array-functions "^1.3.0"
 
