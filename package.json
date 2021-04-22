@@ -31,7 +31,7 @@
     "cross-env": "7.0.3",
     "css-loader": "5.2.0",
     "html-webpack-plugin": "4.5.2",
-    "mini-css-extract-plugin": "1.4.0",
+    "mini-css-extract-plugin": "1.5.0",
     "node-sass": "5.0.0",
     "node-schedule": "2.0.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
