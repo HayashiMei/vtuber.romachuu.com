@@ -16,12 +16,12 @@
   "license": "MIT",
   "dependencies": {
     "axios": "0.21.1",
-    "core-js": "3.11.0",
+    "core-js": "3.11.1",
     "d3": "6.7.0",
     "vue": "2.6.12"
   },
   "devDependencies": {
-    "@babel/core": "7.13.16",
+    "@babel/core": "7.14.0",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/preset-env": "7.14.0",
     "autoprefixer": "9.8.6",
@@ -31,7 +31,7 @@
     "cross-env": "7.0.3",
     "css-loader": "5.2.4",
     "html-webpack-plugin": "4.5.2",
-    "mini-css-extract-plugin": "1.5.0",
+    "mini-css-extract-plugin": "1.5.1",
     "node-sass": "5.0.0",
     "node-schedule": "2.0.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
