@@ -39,7 +39,7 @@
     "progress-bar-webpack-plugin": "2.1.0",
     "querystring": "0.2.1",
     "sass-loader": "12.4.0",
-    "terser-webpack-plugin": "5.2.4",
+    "terser-webpack-plugin": "5.3.1",
     "url-loader": "4.1.1",
     "vue-loader": "17.0.0",
     "vue-template-compiler": "2.6.14",
